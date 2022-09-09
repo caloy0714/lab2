@@ -1,32 +1,65 @@
 <?php
 $success = $_GET['success'] ?? null;
+$error = $_GET['error'] ?? null;
 ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<title>File Upload Handler in PHP</title>
+</head>
 <body>
-
-<?php if (!is_null($success)): ?>
-    <div class="alert alert-success" role="alert">
-    Your file was successfully uploaded
-    </div>
-<?php endif ?>
-
 <div class="container-sm">
-<form action="file-uploader\index.php" style="text-align: left; "  method="POST" enctype="multipart/form-data">
-  <div class="container">  
-    <h1>Registeration Form</h1>
-<pre>
-    <label for="username">Complete Name:</label>    <input type="text" placeholder="" name="email" id="complete_name" required></br>
-    
-    <label for="email">Email:</label>            <input type="text" placeholder="" name="email" id="email"  required></br>
-   
-    <label for="password">Password:</label>         <input type="password" placeholder="" name="password" id="password" required></br>
 
-    <label for="confirm_password">Confirm Password:</label> <input type="password" placeholder="" name="confirm_password" id="confirm_password" required></br>
-
-    <label for="picture">Picture</label>            <input type="file" placeholder="Choose File" name="picture" id="picture" required></br></br>
-    <input type="submit" value="submit">
-    
-</pre>
+  <?php if (!is_null($success)): ?>
+  <div class="alert alert-success" role="alert">
+    Your file was successfully uploaded
   </div>
-</form>
+  <?php endif ?>
+
+  <?php if (!is_null($error)): ?>
+  <div class="alert alert-danger" role="alert">
+    Unable to upload your file
+  </div>
+  <?php endif ?>
+
+  <h1>PDC10 - File Uploader</h1>
+  <form method="POST" enctype="multipart/form-data" action="index.php">
+    <div class="mb-3">
+      <label for="complete_name" class="form-label">Complete Name</label>
+      <input name="complete_name" class="form-control" type="text" id="complete_name">
+
+      <label for="email" class="form-label">Email Address</label>
+      <input name="email" class="form-control" type="email" id="email">
+
+      <label for="password" class="form-label">Password</label>
+      <input name="password" class="form-control" type="password" id="password">
+
+      <label for="c_password" class="form-label">Confirm Password</label>
+      <input name="c_password" class="form-control" type="password" id="c_password">
+
+      <label for="input_file" class="form-label">Upload your file</label>
+      <input name="input_file" class="form-control" type="file" id="input_file">
+    </div>
+    <input type="submit" value="Register" class="btn btn-secondary btn-lg" />
+  </form>
+
+</div>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
 </body>
+</html>
