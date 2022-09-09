@@ -41,8 +41,8 @@ if ($result !== FALSE) {
                 <td> <?php echo $input->getId()?> </td>
                 <td> <?php echo $input->getCompleteName()?> }} </td>
                 <td> <?php echo $input->getEmail() ?> </td>
-				<td> <?php echo $input->getPicturePath() ?> </td> 
-				<td> <?php echo $input->getRegisteredDate()?> </td>            
+		<td> <?php echo $input->getPicturePath() ?> </td> 
+		<td> <?php echo $input->getRegisteredDate()?> </td>            
                 </tr>
 				<?php } ?>
             </tbody>
