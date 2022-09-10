@@ -14,16 +14,16 @@ class Registration
 	const DIRECTORY_IMAGES = 'images/';
 
 	public function __construct(
-		$complete_name,
-		$email,
+	$complete_name,
+	$email,
         $picture_path,
-        $registered_at =null
+        $registered_at
 	)
 	{
-		$this->complete_name = $complete_name;
-		$this->email = $email;
+	$this->complete_name = $complete_name;
+	$this->email = $email;
         $this->picture_path = $picture_path;
-        $this->created_at = $registered_at;
+        $this->registered_at = $registered_at;
 	}
 
     
@@ -101,8 +101,8 @@ class Registration
 						$file_type = static::TYPE_IMAGE;
 					}
 					return [
-						'path' => $target_file_path,
-						'type' => $file_type
+						'picture_path',
+						'registered_at'
 					];
 				}
 			}
