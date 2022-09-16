@@ -29,7 +29,7 @@ $error = $_GET['error'] ?? null;
   <?php endif ?>
 
   <h1>PDC10 - File Uploader</h1>
-  <form method="POST" enctype="multipart/form-data" action="index.php">
+  <form method="POST" enctype="multipart/form-data" action="/file-upload/index.php">
     <div class="mb-3">
       <label for="complete_name" class="form-label">Complete Name</label>
       <input name="complete_name" class="form-control" type="text" id="complete_name">
