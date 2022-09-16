@@ -2,6 +2,7 @@
 
 class Registration
 {
+	protected $id;
 	protected $complete_name;
 	protected $email;
 	protected $picture_path;
@@ -73,8 +74,8 @@ class Registration
 			return $statement->execute([
 				':complete_name' => $this->getCompleteName(),
 				':email' => $this->getEmail(),
-                ':registered_at' => $this->getRegisteredAt(),
-                ':picture_path' => $this->getPicturePath()
+                		':registered_at' => $this->getRegisteredAt(),
+                		':picture_path' => $this->getPicturePath()
 			]);
 
 		} catch (Exception $e) {
